@@ -1,100 +1,47 @@
 # Citizens Bank Website
 
-A responsive website for Citizens Bank built with HTML, CSS, SASS/SCSS, and JavaScript.
-
-## Features
-
-- Fully responsive design using custom media queries
-- Mobile-first approach
-- Custom grid system (no external frameworks)
-- Component-based architecture
-- Modular SASS structure
-- Interactive elements with JavaScript
+A responsive website for Citizens Bank built with HTML, CSS, and vanilla JavaScript.
 
 ## Project Structure
 
 ```
-project/
+citizens-bank-website/
 ├── css/
-│   └── main.css (compiled from SCSS)
-├── img/
-│   ├── citizens-logo.png
-│   ├── hero-image.jpg
-│   └── team-member-*.jpg
+│   └── main.css          # Main stylesheet
+├── img/                  # Image assets
 ├── js/
-│   └── main.js
-├── scss/
-│   ├── abstracts/
-│   │   ├── _functions.scss
-│   │   ├── _mixins.scss
-│   │   └── _variables.scss
-│   ├── base/
-│   │   ├── _reset.scss
-│   │   ├── _typography.scss
-│   │   └── _utilities.scss
-│   ├── components/
-│   │   ├── _advantage-card.scss
-│   │   ├── _buttons.scss
-│   │   ├── _hero.scss
-│   │   ├── _social-links.scss
-│   │   └── _team-member.scss
-│   ├── layout/
-│   │   ├── _footer.scss
-│   │   ├── _grid.scss
-│   │   ├── _header.scss
-│   │   └── _navigation.scss
-│   └── main.scss
-├── index.html
-├── package.json
-└── README.md
+│   └── main.js           # JavaScript functionality
+└── index.html            # Main HTML file
 ```
 
-## Getting Started
+## Features
 
-### Prerequisites
+- Responsive design that works on mobile, tablet, and desktop
+- Modern, clean UI with Citizens Bank branding
+- Interactive elements with smooth animations
+- Semantic HTML structure for accessibility
 
-- Node.js and npm
+## How to Use
 
-### Installation
+1. Clone or download this repository
+2. Open `index.html` in any modern web browser
+3. No build process or server required - just plain HTML, CSS, and JavaScript!
 
-1. Clone the repository
-2. Install dependencies:
-```
-npm install
-```
+## Browser Compatibility
 
-### Development
-
-To compile SASS to CSS once:
-```
-npm run sass
-```
-
-To watch for changes and compile automatically:
-```
-npm run sass:watch
-```
-
-### Production
-
-To build for production (compressed CSS):
-```
-npm run build
-```
-
-## Responsive Breakpoints
-
-- Extra small: 375px
-- Small: 576px
-- Medium: 768px
-- Large: 992px
-- Extra large: 1200px
-
-## Browser Support
-
+This website is compatible with:
 - Chrome (latest)
 - Firefox (latest)
 - Safari (latest)
 - Edge (latest)
-- Opera (latest)
-- IE11 (limited support) 
+
+## Customization
+
+To modify the website:
+- Edit `index.html` to change content and structure
+- Modify `css/main.css` to adjust styles
+- Update `js/main.js` to modify behavior and interactions
+
+## Credits
+
+Created for Citizens Bank demonstration purposes. 

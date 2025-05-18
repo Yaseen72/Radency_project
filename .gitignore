@@ -1,0 +1,16 @@
+# Node.js files
+node_modules/
+package.json
+package-lock.json
+
+# SCSS source files (we're keeping only the compiled CSS)
+scss/
+
+# Editor files
+.vscode/
+.idea/
+*.sublime*
+
+# OS files
+.DS_Store
+Thumbs.db 
