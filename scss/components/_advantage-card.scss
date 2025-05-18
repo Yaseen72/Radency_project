@@ -1,0 +1,60 @@
+.advantage {
+  padding: $spacing-xl 0;
+  background-color: $color-white;
+  
+  .section-title {
+    margin-bottom: $spacing-xl;
+  }
+}
+
+.advantages {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: $spacing-xl;
+  
+  @include respond-to-max(md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.advantage-card {
+  background-color: $color-grey-light;
+  padding: $spacing-lg;
+  border-radius: $border-radius-md;
+  transition: transform $transition-duration ease, box-shadow $transition-duration ease;
+  
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba($color-black, 0.1);
+  }
+  
+  h3 {
+    color: $color-primary;
+    margin-bottom: $spacing-md;
+    position: relative;
+    padding-bottom: $spacing-sm;
+    
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: $color-button;
+    }
+  }
+  
+  p {
+    color: $color-text;
+    margin-bottom: $spacing-md;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  @include respond-to-max(sm) {
+    padding: $spacing-md;
+  }
+} 

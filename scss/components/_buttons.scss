@@ -1,0 +1,47 @@
+.btn {
+  @include button-style;
+  
+  &--primary {
+    @include button-style($color-button, $color-white);
+  }
+  
+  &--secondary {
+    @include button-style($color-primary, $color-white);
+  }
+  
+  &--outline {
+    background-color: transparent;
+    border: 2px solid $color-primary;
+    color: $color-primary;
+    
+    &:hover,
+    &:focus {
+      background-color: $color-primary;
+      color: $color-white;
+    }
+  }
+  
+  &--sm {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-small;
+  }
+  
+  &--lg {
+    padding: $spacing-lg $spacing-xl;
+    font-size: $font-size-large;
+  }
+  
+  &--block {
+    display: block;
+    width: 100%;
+  }
+  
+  &--rounded {
+    border-radius: 50px;
+  }
+  
+  @include respond-to-max(sm) {
+    padding: $spacing-sm $spacing-md;
+    font-size: $font-size-small;
+  }
+} 

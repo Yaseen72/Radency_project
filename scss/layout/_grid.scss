@@ -1,0 +1,107 @@
+$grid-columns: 12;
+$grid-gutter: $spacing-md;
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * $grid-gutter / 2);
+  margin-left: calc(-1 * $grid-gutter / 2);
+
+  @include respond-to-max(sm) {
+    margin-right: calc(-1 * $spacing-sm / 2);
+    margin-left: calc(-1 * $spacing-sm / 2);
+  }
+}
+
+// Generate column classes
+@for $i from 1 through $grid-columns {
+  .col-#{$i} {
+    flex: 0 0 percentage($i / $grid-columns);
+    max-width: percentage($i / $grid-columns);
+    padding-right: $grid-gutter / 2;
+    padding-left: $grid-gutter / 2;
+
+    @include respond-to-max(sm) {
+      padding-right: $spacing-sm / 2;
+      padding-left: $spacing-sm / 2;
+    }
+  }
+}
+
+// Generate responsive column classes for different breakpoints
+@each $breakpoint in (sm, md, lg, xl) {
+  @include respond-to($breakpoint) {
+    @for $i from 1 through $grid-columns {
+      .col-#{$breakpoint}-#{$i} {
+        flex: 0 0 percentage($i / $grid-columns);
+        max-width: percentage($i / $grid-columns);
+      }
+    }
+  }
+}
+
+// Auto column
+.col {
+  flex-basis: 0;
+  flex-grow: 1;
+  max-width: 100%;
+  padding-right: $grid-gutter / 2;
+  padding-left: $grid-gutter / 2;
+
+  @include respond-to-max(sm) {
+    padding-right: $spacing-sm / 2;
+    padding-left: $spacing-sm / 2;
+  }
+}
+
+// Equal width columns
+.col-auto {
+  flex: 0 0 auto;
+  width: auto;
+  max-width: 100%;
+  padding-right: $grid-gutter / 2;
+  padding-left: $grid-gutter / 2;
+
+  @include respond-to-max(sm) {
+    padding-right: $spacing-sm / 2;
+    padding-left: $spacing-sm / 2;
+  }
+}
+
+// Column ordering
+.order-first { order: -1; }
+.order-last { order: $grid-columns + 1; }
+
+@for $i from 1 through $grid-columns {
+  .order-#{$i} { order: $i; }
+}
+
+// Responsive column ordering
+@each $breakpoint in (sm, md, lg, xl) {
+  @include respond-to($breakpoint) {
+    .order-#{$breakpoint}-first { order: -1; }
+    .order-#{$breakpoint}-last { order: $grid-columns + 1; }
+
+    @for $i from 1 through $grid-columns {
+      .order-#{$breakpoint}-#{$i} { order: $i; }
+    }
+  }
+}
+
+// Offset columns
+@for $i from 1 through $grid-columns - 1 {
+  .offset-#{$i} {
+    margin-left: percentage($i / $grid-columns);
+  }
+}
+
+// Responsive offset
+@each $breakpoint in (sm, md, lg, xl) {
+  @include respond-to($breakpoint) {
+    @for $i from 1 through $grid-columns - 1 {
+      .offset-#{$breakpoint}-#{$i} {
+        margin-left: percentage($i / $grid-columns);
+      }
+    }
+  }
+} 

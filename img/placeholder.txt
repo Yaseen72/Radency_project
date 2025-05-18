@@ -1,0 +1,9 @@
+The following images are needed for the website:
+
+1. citizens-logo.png - The Citizens Bank logo
+2. hero-image.jpg - The hero section image (woman in professional attire)
+3. team-member-1.jpg - First team member photo
+4. team-member-2.jpg - Second team member photo
+5. team-member-3.jpg - Third team member photo
+
+Please add these images to this directory. 

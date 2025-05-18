@@ -1,0 +1,102 @@
+// Responsive breakpoints
+@mixin respond-to($breakpoint) {
+  @if $breakpoint == xs {
+    @media (min-width: $breakpoint-xs) { @content; }
+  } @else if $breakpoint == sm {
+    @media (min-width: $breakpoint-sm) { @content; }
+  } @else if $breakpoint == md {
+    @media (min-width: $breakpoint-md) { @content; }
+  } @else if $breakpoint == lg {
+    @media (min-width: $breakpoint-lg) { @content; }
+  } @else if $breakpoint == xl {
+    @media (min-width: $breakpoint-xl) { @content; }
+  }
+}
+
+// Max-width breakpoints (for mobile-first approach)
+@mixin respond-to-max($breakpoint) {
+  @if $breakpoint == xs {
+    @media (max-width: ($breakpoint-xs - 1px)) { @content; }
+  } @else if $breakpoint == sm {
+    @media (max-width: ($breakpoint-sm - 1px)) { @content; }
+  } @else if $breakpoint == md {
+    @media (max-width: ($breakpoint-md - 1px)) { @content; }
+  } @else if $breakpoint == lg {
+    @media (max-width: ($breakpoint-lg - 1px)) { @content; }
+  } @else if $breakpoint == xl {
+    @media (max-width: ($breakpoint-xl - 1px)) { @content; }
+  }
+}
+
+// Flexbox mixins
+@mixin flex($direction: row, $justify: flex-start, $align: stretch, $wrap: nowrap) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+  flex-wrap: $wrap;
+}
+
+// Center element horizontally and vertically
+@mixin center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// Center element horizontally
+@mixin center-horizontal {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+// Clearfix
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+// Truncate text with ellipsis
+@mixin truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Box shadow
+@mixin box-shadow($x: 0, $y: 2px, $blur: 10px, $spread: 0, $color: rgba(0, 0, 0, 0.1)) {
+  box-shadow: $x $y $blur $spread $color;
+}
+
+// Transition
+@mixin transition($property: all, $duration: $transition-duration, $timing: ease) {
+  transition: $property $duration $timing;
+}
+
+// Rounded corners
+@mixin rounded($radius: $border-radius-md) {
+  border-radius: $radius;
+}
+
+// Button styles
+@mixin button-style($bg-color: $color-button, $text-color: $color-white, $hover-darken: 10%) {
+  background-color: $bg-color;
+  color: $text-color;
+  border: none;
+  border-radius: $border-radius-md;
+  padding: $spacing-md $spacing-lg;
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: $font-weight-bold;
+  text-align: center;
+  @include transition;
+  
+  &:hover, &:focus {
+    background-color: darken($bg-color, $hover-darken);
+  }
+} 

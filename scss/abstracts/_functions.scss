@@ -1,0 +1,22 @@
+// Convert pixels to rem
+@function rem($pixels, $context: 16) {
+  @return ($pixels / $context) * 1rem;
+}
+
+// Convert pixels to em
+@function em($pixels, $context: 16) {
+  @return ($pixels / $context) * 1em;
+}
+
+// Calculate custom percentage
+@function calc-percent($target, $container) {
+  @return ($target / $container) * 100%;
+}
+
+// Safely get color from map
+@function color($key) {
+  @if variable-exists(color-#{$key}) {
+    @return var(--color-#{$key});
+  }
+  @return null;
+} 

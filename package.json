@@ -1,0 +1,22 @@
+{
+  "name": "citizens-bank-website",
+  "version": "1.0.0",
+  "description": "Citizens Bank Website",
+  "main": "index.html",
+  "scripts": {
+    "sass": "sass scss/main.scss:css/main.css",
+    "sass:watch": "sass --watch scss/main.scss:css/main.css",
+    "build": "sass scss/main.scss:css/main.css --style=compressed"
+  },
+  "keywords": [
+    "citizens",
+    "bank",
+    "website",
+    "responsive"
+  ],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.62.0"
+  }
+} 
